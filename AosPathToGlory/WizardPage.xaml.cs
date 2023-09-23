@@ -3,7 +3,6 @@
     public partial class WizardPage : ContentPage
     {
         private readonly AosPathToGloryDatabase _pathToGloryDatabase;
-        //int count = 0;
 
         public WizardPage(AosPathToGloryDatabase pathToGloryDatabase)
         {
@@ -11,33 +10,37 @@
             _pathToGloryDatabase = pathToGloryDatabase;
         }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            Shell.SetTabBarIsVisible(this, false);
-        }
+        //protected override void OnAppearing()
+        //{
+        //    base.OnAppearing();
+        //}
 
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-            Shell.SetTabBarIsVisible(this, true);
-        }
+        //protected override void OnDisappearing()
+        //{
+        //    base.OnDisappearing();
+        //    Shell.SetTabBarIsVisible(this, true);
+        //}
 
         private async void OnSaveClicked(object sender, EventArgs e)
         {
-            if (ArmyStartingSize.Text == string.Empty)
+            if (ArmyStartingSize.Text == null || ArmyStartingSize.Text == string.Empty)
                 ArmyStartingSize.Text = "0";
+
+            ArmyName.Text ??= string.Empty;
+            ArmyFaction.Text ??= string.Empty;
+            ArmyOrigin.Text ??= string.Empty;
+            ArmySubFaction.Text ??= string.Empty;
 
             await _pathToGloryDatabase.SaveItemAsync(new AosArmy
             {
-                Name= ArmyName.Text,
+                Name = ArmyName.Text,
                 Faction = ArmyFaction.Text,
                 Origin = ArmyOrigin.Text,
                 StartingSize = int.Parse(ArmyStartingSize.Text),
                 SubFaction = ArmySubFaction.Text,
             });
 
-            Application.Current.MainPage = new NavigationPage(new MainPage(new AosPathToGloryDatabase()));
+            await Shell.Current.GoToAsync("armylist");
         }
     }
 }

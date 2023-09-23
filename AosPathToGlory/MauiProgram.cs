@@ -19,11 +19,15 @@ namespace AosPathToGlory
             builder.Services.AddTransient<EmpirePage>();
             builder.Services.AddTransient<LineUpPage>();
             builder.Services.AddTransient<ArmyListPage>();
+            builder.Services.AddTransient<WizardPage>();
             builder.Services.AddSingleton<AosPathToGloryDatabase>();
 
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
+
+            Routing.RegisterRoute("wizard", typeof(WizardPage));
+            Routing.RegisterRoute("armylist", typeof(ArmyListPage));
 
             return builder.Build();
         }
