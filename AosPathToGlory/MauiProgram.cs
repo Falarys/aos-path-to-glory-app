@@ -16,6 +16,9 @@ namespace AosPathToGlory
                 });
 
             builder.Services.AddTransient<MainPage>();
+            builder.Services.AddTransient<EmpirePage>();
+            builder.Services.AddTransient<LineUpPage>();
+            builder.Services.AddTransient<ArmyListPage>();
             builder.Services.AddSingleton<AosPathToGloryDatabase>();
 
 #if DEBUG

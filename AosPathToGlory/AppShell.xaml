@@ -3,12 +3,23 @@
     x:Class="AosPathToGlory.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:AosPathToGlory"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:local="clr-namespace:AosPathToGlory">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <!--<Tab Title="List">-->
+        <ShellContent ContentTemplate="{DataTemplate local:ArmyListPage}" />
+    <!--</Tab>-->
+
+    <!--<TabBar>
+        
+        <Tab Title="Überblick">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+        </Tab>
+        <Tab Title="Reich">
+            <ShellContent ContentTemplate="{DataTemplate local:EmpirePage}" />
+        </Tab>
+        <Tab Title="Aufstellung">
+            <ShellContent ContentTemplate="{DataTemplate local:LineUpPage}" />
+        </Tab>
+    </TabBar>-->
 
 </Shell>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AosPathToGlory.ArmyListPage">
+
+    <!--<ScrollView>
+        <VerticalStackLayout
+            Padding="30,0" 
+            Margin="20" 
+            Spacing="5"
+            VerticalOptions="Start">-->
+    <StackLayout>
+        <Button Text="Create" Clicked="OnCreateClicked" />
+        <ListView ItemsSource="{Binding AosArmies}" x:Name="ArmyList">
+                <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <VerticalStackLayout Padding="10">
+                            <Label 
+                               Text="{Binding Name}"
+                               FontAttributes="Bold" 
+                               TextColor="White" />
+                            <Label 
+                                Text="{Binding Faction}"
+                                FontAttributes="None"
+                                VerticalOptions="End"
+                                TextColor="White" />
+                        </VerticalStackLayout>
+                                
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+    </StackLayout>
+    <!--<Button
+                x:Name="NewBtn"
+                Text="New"
+                Clicked="OnNewClicked"
+                HorizontalOptions="FillAndExpand" />
+
+        </VerticalStackLayout>
+    </ScrollView>-->
+
+</ContentPage>

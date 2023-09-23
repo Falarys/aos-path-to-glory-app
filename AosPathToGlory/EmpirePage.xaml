@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AosPathToGlory.EmpirePage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0" 
+            Margin="20" 
+            Spacing="5"
+            VerticalOptions="Center">
+
+            <!--<Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />-->
+
+            <!--<Label
+                Text="Name der Armee"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />-->
+
+            <Label
+                Text="Name der Armee"
+                HorizontalOptions="FillAndExpand"
+                HorizontalTextAlignment="Start" 
+                SemanticProperties.HeadingLevel="Level1" 
+                FontSize="Subtitle" />
+
+            <Entry
+                x:Name="ArmyName"
+                HorizontalOptions="FillAndExpand"
+                Margin="0,0,0,20" />
+
+            <Label
+                Text="Fraktion"
+                HorizontalOptions="FillAndExpand"
+                HorizontalTextAlignment="Start" 
+                SemanticProperties.HeadingLevel="Level1" 
+                FontSize="Subtitle" />
+
+            <Entry
+                x:Name="ArmyFaction"
+                HorizontalOptions="FillAndExpand" 
+                Margin="0,0,0,20" />
+
+            <Label
+                Text="Unterfraktion"
+                HorizontalOptions="FillAndExpand"
+                HorizontalTextAlignment="Start" 
+                SemanticProperties.HeadingLevel="Level1" 
+                FontSize="Subtitle" />
+
+            <Entry
+                x:Name="ArmySubFaction"
+                HorizontalOptions="FillAndExpand" 
+                Margin="0,0,0,20" />
+
+            <Label
+                Text="Herkunftsreich"
+                HorizontalOptions="FillAndExpand"
+                HorizontalTextAlignment="Start" 
+                SemanticProperties.HeadingLevel="Level1" 
+                FontSize="Subtitle" />
+
+            <Entry
+                x:Name="ArmyOrigin"
+                HorizontalOptions="FillAndExpand" 
+                Margin="0,0,0,20" />
+
+            <Label
+                Text="Anfängliche Größe"
+                HorizontalOptions="FillAndExpand"
+                HorizontalTextAlignment="Start" 
+                SemanticProperties.HeadingLevel="Level1" 
+                FontSize="Subtitle" />
+
+            <Entry
+                x:Name="ArmyStartingSize"
+                HorizontalOptions="FillAndExpand" 
+                Keyboard="Numeric" 
+                Margin="0,0,0,20" />
+
+            <!--<Label
+                Text="Welcome to .NET Multi-platform App UI"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center" />-->
+
+            <Button
+                x:Name="SaveBtn"
+                Text="Save"
+                Clicked="OnSaveClicked"
+                HorizontalOptions="FillAndExpand" />
+
+            <Button
+                x:Name="DeleteBtn"
+                Text="Delete"
+                Clicked="OnDeleteClicked"
+                HorizontalOptions="FillAndExpand" />
+            
+            <!--<Picker
+                
+                />
+
+            
+
+            <CheckBox
+                
+                />-->
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

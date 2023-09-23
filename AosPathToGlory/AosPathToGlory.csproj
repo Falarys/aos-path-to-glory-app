@@ -53,4 +53,34 @@
 		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="ArmyListPage.xaml.cs">
+	    <DependentUpon>ArmyListPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="LineUpPage.xaml.cs">
+	    <DependentUpon>LineUpPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="EmpirePage.xaml.cs">
+	    <DependentUpon>EmpirePage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="WizardPage.xaml.cs">
+	    <DependentUpon>WizardPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="ArmyListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="LineUpPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="EmpirePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="WizardPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>

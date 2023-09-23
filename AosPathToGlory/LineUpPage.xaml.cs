@@ -1,11 +1,11 @@
 ﻿namespace AosPathToGlory
 {
-    public partial class MainPage : ContentPage
+    public partial class LineUpPage : ContentPage
     {
         private readonly AosPathToGloryDatabase _pathToGloryDatabase;
         //int count = 0;
 
-        public MainPage(AosPathToGloryDatabase pathToGloryDatabase)
+        public LineUpPage(AosPathToGloryDatabase pathToGloryDatabase)
         {
             InitializeComponent();
             _pathToGloryDatabase = pathToGloryDatabase;
@@ -18,20 +18,14 @@
 
         protected override async void OnAppearing()
         {
-            base.OnAppearing();
             await UpdateAsync();
-        }
-
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-            Shell.SetTabBarIsVisible(this, true);
         }
 
         private async Task UpdateAsync()
         {
             var armies = await _pathToGloryDatabase.GetArmiesAsync();
             
+
             var armiesCount = await armies.CountAsync();
             var canArmyBeCreated = armiesCount == 0;
             
@@ -42,9 +36,6 @@
             ArmyOrigin.IsEnabled = canArmyBeCreated;
             SaveBtn.IsVisible = canArmyBeCreated;
             DeleteBtn.IsVisible = !canArmyBeCreated;
-
-            //Shell.SetNavBarIsVisible(this, !canArmyBeCreated);
-            Shell.SetTabBarIsVisible(this, !canArmyBeCreated);
 
             if (canArmyBeCreated)
             {
